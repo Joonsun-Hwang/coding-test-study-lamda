@@ -8,10 +8,10 @@ def solution(N, number):
     for i, x in enumerate(s):
         x.add(int(str(N)*(i+1)))  # 개수 조합
     
-    for i in range(1, len(s)):
+    for i in range(1, len(s)):  # i는 몇개의 N을 썼는지에 대한 변수, 정확히는 i == n(N)-1
         for j in range(i):
             for op1 in s[j]:
-                for op2 in s[i-j-1]:
+                for op2 in s[i-j-1]:  # j + (i-j-1)은 i-1, 즉 N을 i-1번 사용한 결과는 i번째 인덱스에 저장됨
                     s[i].add(op1+op2)
                     s[i].add(op1-op2)
                     s[i].add(op1*op2)
