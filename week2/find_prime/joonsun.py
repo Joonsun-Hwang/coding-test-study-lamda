@@ -13,7 +13,7 @@ def solution(numbers):
     perm = list(set(map(int, perm)))
     
     # 소수 찾기
-    for num in comb:
+    for num in perm:
         for mod in range(2, num+1):
             if num % mod == 0:
                 if num == mod:
