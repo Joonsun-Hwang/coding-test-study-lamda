@@ -1,10 +1,11 @@
+import pdb
 def solution(N, number):
     answer = -1
-    
+    pdb.set_trace()    
     if N == number:
         return 1
-    
-    s = [set() for x in range(8)]  # 4번 제한사항
+   
+    s = [set() for x in range(8)]  # 4번 제한사항(최솟값이 8보다 크면 -1을 return 합니다.)
     for i, x in enumerate(s):
         x.add(int(str(N)*(i+1)))  # 개수 조합
     
@@ -22,3 +23,5 @@ def solution(N, number):
             break
     
     return answer
+
+solution(5, 12)
