@@ -1,4 +1,5 @@
-# 현재 버전은 시간초과 남. 수정 ㅇㅖ정
+import sys
+sys.setrecursionlimit(10**6)
 
 class Node(object):
     def __init__(self, node, idx):
@@ -25,38 +26,29 @@ class BinaryTree(object):
         
         for c_n in node_sorted:
             current_node = self.nodes_iton[self.nodes_xtoi[c_n[0]]]
-            
-            left_cand_node = [n for n in node_sorted 
-                              if n is not c_n and 
-                              n[0] < current_node.x and 
-                              n[1] < current_node.y]
             parent_node = current_node.parent
+            cand_node = node_sorted
             while parent_node is not None:
-                left_cand_node = [n for n in left_cand_node 
-                                  if (current_node.x > parent_node.x and 
-                                      n[0] > parent_node.x) or 
-                                  (current_node.x < parent_node.x and 
-                                   n[0] < parent_node.x)]
+                cand_node = [n for n in cand_node
+                             if n[1] < current_node.y and
+                             (current_node.x > parent_node.x and 
+                              n[0] > parent_node.x) or
+                             (current_node.x < parent_node.x and
+                              n[0] < parent_node.x)]
                 parent_node = parent_node.parent
+            
+            left_cand_node, right_cand_node = [], []
+            for n in cand_node:
+                if n[0] < current_node.x:
+                    left_cand_node.append(n)
+                if n[0] > current_node.x:
+                    right_cand_node.append(n)
             
             if left_cand_node:
                 left_node_x = sorted(left_cand_node, key=lambda l:l[1], reverse=True)[0][0]
                 left_node = self.nodes_iton[self.nodes_xtoi[left_node_x]]
                 current_node.left_child = left_node
                 left_node.parent = current_node
-            
-            right_cand_node = [n for n in node_sorted 
-                               if n is not c_n and 
-                               n[0] > current_node.x and 
-                               n[1] < current_node.y]
-            parent_node = current_node.parent
-            while parent_node is not None:
-                right_cand_node = [n for n in right_cand_node 
-                                  if (current_node.x > parent_node.x and 
-                                      n[0] > parent_node.x) or 
-                                   (current_node.x < parent_node.x and 
-                                    n[0] < parent_node.x)]
-                parent_node = parent_node.parent
             
             if right_cand_node:
                 right_node_x = sorted(right_cand_node, key=lambda l:l[1], reverse=True)[0][0]
@@ -107,7 +99,4 @@ def solution(nodeinfo):
     answer.append(bt.get_preorder())
     answer.append(bt.get_postorder())
     
-    print(answer)
-    
     return answer
-
