@@ -1,7 +1,5 @@
-import pdb
 def solution(N, number):
     answer = -1
-    pdb.set_trace()    
     if N == number:
         return 1
    
@@ -19,9 +17,7 @@ def solution(N, number):
                     if op2 != 0:
                         s[i].add(op1//op2)
         if number in s[i]:
-            answer = i+1;
+            answer = i+1
             break
     
     return answer
-
-solution(5, 12)

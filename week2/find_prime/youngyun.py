@@ -1,14 +1,10 @@
-pfrom itertools import permutations
+from itertools import permutations
+
 def solution(numbers):
-    str_list=[]
     a = []
-    
-    size = len(numbers) + 1
-    answer_set = set()
     answer = 0
-    for i in numbers:
-        str_list.append(i)
-    for i in range(1,size):
+    str_list = list(numbers)
+    for i in range(1,len(numbers) + 1):
         a.extend(list(map("".join,list(permutations(str_list,i)))))
     ans=set(map(int,a))
     for i in ans:
@@ -25,7 +21,3 @@ def is_prime(num):
         if num%i ==0 :
             return 0
     return 1
-    
-    
-    
-    
