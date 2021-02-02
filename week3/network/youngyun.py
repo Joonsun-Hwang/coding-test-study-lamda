@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 def solution(n, computers):
     visited = [0] * n
     answer =0
@@ -24,4 +22,4 @@ def solution(n, computers):
 
 
     return answer
->>>>>>> 1f4052bc70eea66c1ace634ac4879be9f1827da5
+
