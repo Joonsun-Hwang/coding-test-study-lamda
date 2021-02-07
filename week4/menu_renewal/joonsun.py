@@ -1,3 +1,5 @@
+# There are test cases that are timed out.
+
 from itertools import combinations
 
 def filtering_course(orders, course):
