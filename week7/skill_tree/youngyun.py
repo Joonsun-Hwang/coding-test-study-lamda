@@ -6,12 +6,12 @@ def solution(skill, skill_trees):
         for char in sg:
             if char not in skill:
                 pass
-            else :
+            else:
                 if char == skill[0]:
-                    skill=skill[1:]
+                    skill = skill[1:]
                 else:
                     print(sg)
                     break
-        else :
-            answer+=1
+        else:
+            answer += 1
     return answer

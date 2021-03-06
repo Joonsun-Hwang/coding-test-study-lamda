@@ -8,8 +8,10 @@ def check_divisibility(n, m):
     else:
         return False
 
+
 def len_boundary(i, j):
-    return i*2 + j*2 + 4
+    return i * 2 + j * 2 + 4
+
 
 def solution(brown, yellow):
     answer = []
@@ -21,7 +23,7 @@ def solution(brown, yellow):
             if j >= i:
                 #  print('check brown')
                 if brown == len_boundary(i, j):
-                    return [j+2, i+2]
+                    return [j + 2, i + 2]
 
     return answer
 
@@ -45,7 +47,6 @@ def main():
     answer = solution(brown, yellow)
     print(answer)
     #  [8, 6]
-
 
 
 if __name__ == "__main__":

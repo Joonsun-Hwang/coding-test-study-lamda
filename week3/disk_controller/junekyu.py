@@ -5,8 +5,9 @@ import heapq
 from collections import deque
 import pdb
 
+
 def solution(jobs):
-    
+
     num_of_works = len(jobs)
     jobs = deque(sorted(jobs))
 

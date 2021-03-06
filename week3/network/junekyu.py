@@ -4,6 +4,7 @@
 
 import pdb
 
+
 def dfs(computers, start_node):
     visited = []
     stack = []
@@ -16,7 +17,8 @@ def dfs(computers, start_node):
             visited.append(node)
             #  connected nodes
             for i, edge in enumerate(computers[node]):
-                if i == node: continue
+                if i == node:
+                    continue
                 if edge:
                     stack.append(i)
     return visited
@@ -51,8 +53,6 @@ def main():
     answer = solution(n, computers)
     print(answer)
     # 1
-
-
 
 
 if __name__ == "__main__":

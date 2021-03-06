@@ -9,29 +9,30 @@
 
 """
 import copy
+
+
 def solution(stones, k):
     inf = 200000000
-    
+
     left, right = 1, inf
-    while left <= right :
-        lot=0
+    while left <= right:
+        lot = 0
         mid = (left + right) // 2
         tmp = copy.deepcopy(stones)
         check = False
         for i in range(len(tmp)):
-            tmp[i]-=mid
+            tmp[i] -= mid
         for t in tmp:
             if t <= 0:
                 lot += 1
-            else :
+            else:
                 lot = 0
             if lot >= k:
                 check = True
                 break
         if check:
-            right = mid-1
-        else :
-            left = mid+1
-              
+            right = mid - 1
+        else:
+            left = mid + 1
+
     return left
-            

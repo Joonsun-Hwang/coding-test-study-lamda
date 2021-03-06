@@ -4,16 +4,16 @@
 
 import pdb
 
+
 def solution(array, commands):
 
     answer = []
     for command in commands:
         new_arr = array.copy()
-        new_arr = new_arr[command[0]-1:command[1]]
+        new_arr = new_arr[command[0] - 1 : command[1]]
         new_arr.sort()
-        answer.append(new_arr[command[2]-1])
+        answer.append(new_arr[command[2] - 1])
 
-    
     return answer
 
 

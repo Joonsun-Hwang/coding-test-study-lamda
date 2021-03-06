@@ -5,7 +5,7 @@ import pdb
 
 
 def solution(skill, skill_trees):
-    
+
     answer = 0
 
     for skill_tree in skill_trees:

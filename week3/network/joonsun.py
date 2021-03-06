@@ -8,6 +8,7 @@ def dfs(computers, visited, start):
             if computers[j][i] == 1 and visited[i] == 0:
                 stack.append(i)
 
+
 def solution(n, computers):
     answer = 0
     visited = [0 for i in range(n)]
@@ -15,5 +16,5 @@ def solution(n, computers):
     for i in range(len(visited)):  # 모두 방문할 때까지
         if visited[i] == 0:
             dfs(computers, visited, i)
-            answer +=1
+            answer += 1
     return answer

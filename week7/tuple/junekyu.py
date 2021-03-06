@@ -3,14 +3,15 @@
 
 import pdb
 
+
 def solution(s):
 
     s = s[2:-2]
-    s_list = s.split('},{')
+    s_list = s.split("},{")
 
     tup_list = []
     for s_ in s_list:
-        tup_list.append(s_.split(','))
+        tup_list.append(s_.split(","))
     tup_list.sort(key=lambda x: len(x))
 
     answer = []
@@ -55,7 +56,6 @@ def main():
     answer = solution(s)
     print(answer)
     # [3, 2, 4, 1]
-
 
 
 if __name__ == "__main__":

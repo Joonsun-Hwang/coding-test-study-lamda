@@ -1,5 +1,6 @@
 import heapq
 
+
 def solution(jobs):
     count, last_t = 0, -1
     answer = 0
@@ -18,5 +19,5 @@ def solution(jobs):
             answer += current_t - start_t
         else:
             current_t += 1
-            
+
     return answer // len(jobs)

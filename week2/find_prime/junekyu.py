@@ -1,13 +1,14 @@
 from itertools import permutations
 
+
 def solution(numbers):
     answer = 0
 
     perms = set()
     for i in range(len(numbers)):
-        permutation = permutations(numbers, i+1)
+        permutation = permutations(numbers, i + 1)
         for perm in permutation:
-            num = int(''.join(perm))
+            num = int("".join(perm))
             perms.add(num)
 
     for perm in perms:
@@ -15,7 +16,7 @@ def solution(numbers):
             answer += 1
 
     return answer
-       
+
 
 def is_prime(number):
     if number > 1:
@@ -26,7 +27,7 @@ def is_prime(number):
 
 
 def main():
-    input_str= input('Enter your string: ')
+    input_str = input("Enter your string: ")
 
     answer = solution(input_str)
     print(answer)

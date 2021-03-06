@@ -3,8 +3,9 @@
 
 import pdb
 
+
 def solution(prices):
-    
+
     answer = []
     for i, p in enumerate(prices):
         count = 0
@@ -13,8 +14,9 @@ def solution(prices):
             if prices[j] < p:
                 break
         answer.append(count)
-                
+
     return answer
+
 
 def main():
     #  input_str = input('Enter your string: ')
@@ -23,6 +25,7 @@ def main():
     answer = solution(input_list)
     print(answer)
     # [4, 3, 1, 1, 0]
+
 
 if __name__ == "__main__":
     main()

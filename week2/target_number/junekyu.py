@@ -7,10 +7,11 @@ def solution(numbers, target):
 
     return answer
 
+
 def recursive(value, numbers, index, target, count):
-    
+
     if index == len(numbers):
-        if (value[-1] == target):
+        if value[-1] == target:
             return count + 1
         else:
             return count
@@ -19,18 +20,19 @@ def recursive(value, numbers, index, target, count):
     if index == 0:
         value[index] = numbers[index]
     else:
-        value[index] = value[index-1] + numbers[index]
-    count = recursive(value, numbers, index+1, target, count)
+        value[index] = value[index - 1] + numbers[index]
+    count = recursive(value, numbers, index + 1, target, count)
 
     # minus
     if index == 0:
         value[index] = -numbers[index]
     else:
-        value[index] = value[index-1] - numbers[index]
+        value[index] = value[index - 1] - numbers[index]
 
-    count = recursive(value, numbers, index+1, target, count)
+    count = recursive(value, numbers, index + 1, target, count)
 
     return count
+
 
 def main():
     numbers = [1, 1, 1, 1, 1]
@@ -38,6 +40,7 @@ def main():
     answer = solution(numbers, target)
     print(answer)
     # 3
+
 
 if __name__ == "__main__":
     main()

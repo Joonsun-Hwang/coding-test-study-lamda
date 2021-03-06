@@ -3,23 +3,25 @@
 
 import pdb
 
+
 def solution(n, times):
 
     answer = 0
 
     min_time = 1000000000
     for time in times:
-        if time < min_time: min_time = time
+        if time < min_time:
+            min_time = time
 
     start = min_time
     end = n * min_time
     while start <= end:
-        mid = (start + end)//2
-        
+        mid = (start + end) // 2
+
         checked = 0
         # check
         for time in times:
-            checked += (mid // time)
+            checked += mid // time
 
         if checked >= n:
             answer = mid

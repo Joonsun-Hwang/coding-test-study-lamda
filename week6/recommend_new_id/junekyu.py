@@ -3,14 +3,15 @@
 
 import pdb
 
+
 def solution(new_id):
     # 1.
     new_id = new_id.lower()
     # 2. 3.
-    can_use_list = [chr(i) for i in range(ord('a'), ord('z')+1)]
-    can_use_list.append('-')
-    can_use_list.append('_')
-    can_use_list.append('.')
+    can_use_list = [chr(i) for i in range(ord("a"), ord("z") + 1)]
+    can_use_list.append("-")
+    can_use_list.append("_")
+    can_use_list.append(".")
     n_list = [str(i) for i in range(10)]
     can_use_list.extend(n_list)
 
@@ -18,10 +19,10 @@ def solution(new_id):
     continuity_flag = False
     for c in new_id:
         if c in can_use_list:
-            if c == '.' and continuity_flag == False:
+            if c == "." and continuity_flag == False:
                 continuity_flag = True
                 temp_new_id += c
-            elif c == '.' and continuity_flag:
+            elif c == "." and continuity_flag:
                 continue
             else:
                 continuity_flag = False
@@ -30,29 +31,29 @@ def solution(new_id):
 
     # 4.
     if new_id:
-        if new_id[0] == '.' and new_id:
+        if new_id[0] == "." and new_id:
             new_id = new_id[1:]
     if new_id:
-        if new_id[-1] == '.':
+        if new_id[-1] == ".":
             new_id = new_id[:-1]
 
     # 5.
     if len(new_id) == 0:
-        new_id = 'a'
+        new_id = "a"
 
     # 6.
     new_id = new_id[:15]
-    
+
     # 7.
     while len(new_id) <= 2:
         new_id += new_id[-1]
 
     # do 4. again
     if new_id:
-        if new_id[0] == '.' and new_id:
+        if new_id[0] == "." and new_id:
             new_id = new_id[1:]
     if new_id:
-        if new_id[-1] == '.':
+        if new_id[-1] == ".":
             new_id = new_id[:-1]
 
     answer = new_id
@@ -85,7 +86,6 @@ def main():
     answer = solution(new_id)
     print(answer)
     # "abcdefghijklmn"
-
 
 
 if __name__ == "__main__":

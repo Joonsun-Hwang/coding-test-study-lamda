@@ -3,6 +3,7 @@
 
 import pdb
 
+
 def solution(stones, k):
     answer = 0
     minimum = 0
@@ -11,7 +12,7 @@ def solution(stones, k):
 
     while minimum <= maximum:
 
-        temp_stones = [stone - mid for stone in stones] 
+        temp_stones = [stone - mid for stone in stones]
         cur_crossed = maximum
 
         flag = True

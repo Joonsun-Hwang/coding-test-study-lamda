@@ -5,6 +5,7 @@ import pdb
 
 alphas = [chr(i).lower() for i in range(65, 91)]
 
+
 def make_set(string):
 
     multi_set = []
@@ -14,10 +15,10 @@ def make_set(string):
             multi_set.append(token)
 
     return multi_set
-        
+
 
 def solution(str1, str2):
-    
+
     str1 = str1.lower()
     str2 = str2.lower()
 
@@ -32,12 +33,12 @@ def solution(str1, str2):
             count += 1
     intersection = count
     union = len(temp_str2_mset) + len(str1_mset)
-    
+
     if union != 0:
-        answer = intersection/union
+        answer = intersection / union
     else:
         answer = 1
-    answer = 65536*answer
+    answer = 65536 * answer
 
     return int(answer)
 
@@ -68,7 +69,6 @@ def main():
     answer = solution(str1, str2)
     print(answer)
     #  65536
-
 
 
 if __name__ == "__main__":
