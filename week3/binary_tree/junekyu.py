@@ -3,22 +3,24 @@
 
 import pdb
 
+
 def solution(nodeinfo):
 
     # preprocessing
     nodeinfo_dict = {}
     for i, node in enumerate(nodeinfo):
-        nodeinfo_dict[i+1] = node
+        nodeinfo_dict[i + 1] = node
     sorted_nodes = sorted(nodeinfo_dict.items(), key=lambda k: k[1][1], reverse=True)
 
     tree = make_tree(sorted_nodes)
 
     priors = prior(tree)
-    
+
     posts = post(tree)
     answer = [priors, posts]
 
     return answer
+
 
 def prior(tree):
     traversal = []
@@ -63,6 +65,7 @@ def make_tree(nodeinfo):
 
     return bt
 
+
 class BinaySearchTree(object):
     def __init__(self):
         self.root = None
@@ -98,11 +101,20 @@ class Node(object):
         self.x = node[1][0]
         self.y = node[1][1]
         self.left = self.right = None
-        
 
 
 def main():
-    nodeinfo = [[5,3],[11,5],[13,3],[3,5],[6,1],[1,3],[8,6],[7,2],[2,2]]
+    nodeinfo = [
+        [5, 3],
+        [11, 5],
+        [13, 3],
+        [3, 5],
+        [6, 1],
+        [1, 3],
+        [8, 6],
+        [7, 2],
+        [2, 2],
+    ]
     answer = solution(nodeinfo)
     print(answer)
     # [[7,4,6,9,1,8,5,2,3],[9,6,5,8,1,4,3,2,7]]

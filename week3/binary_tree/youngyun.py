@@ -1,5 +1,8 @@
 import sys
-sys.setrecursionlimit(10**6)
+
+sys.setrecursionlimit(10 ** 6)
+
+
 class Node:
     def __init__(self, val, x, y, left=None, right=None):
         self.val = val
@@ -12,6 +15,7 @@ class Node:
 preorder_list = []
 postorder_list = []
 r_root = None
+
 
 def make_tree(node_list):
     if node_list:
@@ -48,15 +52,15 @@ def solution(nodeinfo):
     node_list.sort(
         key=lambda x: (x.y, -x.x), reverse=True
     )  # y값이 제일 큰게 루트 그다음 차례대로 left,right
-    
+
     root = None
     for node in node_list:
         if not root:
             root = node
-        else :
+        else:
             current = root
             while True:
-                if node.x<current.x:
+                if node.x < current.x:
                     if current.left:
                         current = current.left
                         continue
