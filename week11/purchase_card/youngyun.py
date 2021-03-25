@@ -1,24 +1,16 @@
-import sys
 from collections import defaultdict
 
-def solve(a,cards):
-    print("cards: ",cards)
+
+def solve():
     dp = defaultdict(int)
-    for i in range(a):
-        dp[i] = max(cards[i],dp[i])
-    
-    for j in range(2,a):
-        dp[j] = max(dp[j],dp[j-1]+dp[1])
-    
-    return dp[j]
+    for i in range(1, n+1):
+        for j in range(1, i+1):
+            dp[i] = max(dp[i], dp[i-j]+cards[j-1])
 
-
-
+    return dp[n]
 
 
 if __name__ == "__main__":
-    a=int(input())
-    cards = list(map(int,input().split()))
-    print(solve(a,cards))
-
-
+    n = int(input())
+    cards = list(map(int, input().split()))
+    print(solve())

@@ -1,3 +1,7 @@
+"""
+KMP알고리즘
+"""
+
 import sys
 
 """
@@ -9,17 +13,10 @@ P는 Pattern  P의 길이는 m
 def main():
     T_str = input().strip("\n")
     pattern = input().strip("\n")
+    for idx,p in enumerate(pattern):
+        
     len_p = len(pattern)
-    n_appear = 0
-    idx_appear = []
-    for idx in range(len(T_str)):
-        if hash(T_str[idx : idx + len_p]) == hash(pattern):
-            n_appear += 1
-            idx_appear.append(idx + 1)
-
-    print(n_appear)
-    for answer in idx_appear:
-        print(answer, end=" ")
+    
 
 
 if __name__ == "__main__":
